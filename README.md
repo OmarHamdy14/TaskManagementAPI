@@ -3,10 +3,10 @@
 git clone https://github.com/your-username/TaskManagementAPI.git
 cd TaskManagementAPI
 
-2. Install Dependencies
+3. Install Dependencies
 pip install fastapi uvicorn sqlalchemy pydantic
 
-3. Run the Application
+5. Run the Application
 uvicorn main:app --reload
 
 # API Documentation
