@@ -7,6 +7,29 @@ import schemas, models
 
 router = APIRouter(prefix="/tasks", tags=["Tasks"])
 
+@router.get("/info", tags=["Root"])
+def root():
+    return {
+        "message": "Welcome to Task Management API",
+        "endpoints": [
+            "POST /tasks/",
+            "GET /tasks/",
+            "GET /tasks/{task_id}",
+            "PUT /tasks/{task_id}",
+            "DELETE /tasks/{task_id}",
+            "GET /tasks/status/{status}",
+            "GET /tasks/priority/{priority}",
+            "DELETE /tasks/bulk",
+            "PUT /tasks/bulk",
+            "GET /tasks/info",
+            "GET /tasks/health"
+        ]
+    }
+
+@router.get("/health", tags=["Health"])
+def health():
+    return {"status": "Success"}
+
 def get_db():
     db = SessionLocal()
     try:
